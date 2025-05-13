@@ -6,24 +6,24 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    # Command to launch PX4 SITL with the gz_x500 model
+    # Gazebo
     px4_sitl = ExecuteProcess(
         cmd=['make', 'px4_sitl', 'gz_x500'],
         cwd=os.path.expanduser('~/PX4-Autopilot'),
         output='screen'
     )
 
-    # Command to run the Micro-ROS agent
+    # Micro-ROS-agent
     micro_ros_agent = ExecuteProcess(
         cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
         output='screen'
     )
 
-    # Node to run the simple_flight package's circle_flight node
+    # Our Node
     square_flight = Node(
-        package='simple_flight',
-        executable='square_flight',
-        name='square_flight',
+        package='drone_fly_square',
+        executable='drone_fly_square',
+        name='drone_fly_square',
         output='screen'
     )
 

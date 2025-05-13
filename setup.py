@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'simple_flight'
+package_name = 'drone_fly_square'
 
 setup(
     name=package_name,
@@ -18,12 +18,12 @@ setup(
     zip_safe=True,
     maintainer='developer',
     maintainer_email='krzyskuar@gmail.com',
-    description='flying on circle',
-    license='License declaration',
+    description='flying on square',
+    license='GNU GPL V3',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'square_flight = simple_flight.square_flight:main',
+            'drone_fly_square = drone_fly_square.drone_fly_square:main',
         ],
     },
 )

@@ -31,6 +31,9 @@ This package provides:
    cd ~/your_ros2_ws
    rosdep install --from-paths src --ignore-src -r -y
    ```
+  
+> **IMPORTANT**  
+> Note u have to change name of the main folder "drone_flysquare..." to "drone_fly_square" in order for this package to start, otherwise u need to change package name in setup.py.  
 
 ## Build
 
